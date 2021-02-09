@@ -1,5 +1,6 @@
 import React from "react";
 import Loading from "./Loading";
+import Cocktail from "../component/Cocktail";
 import { useGlobalContext } from "../context";
 
 export default function CocktailList() {
@@ -8,7 +9,7 @@ export default function CocktailList() {
     return <Loading />;
   }
 
-  if (cocktail)
+  if (!cocktail)
     return <h2 className="section-title">no Cocktails to display</h2>;
 
   return (
@@ -16,7 +17,7 @@ export default function CocktailList() {
       <h2 className="section-title">cocktails</h2>
       <div className="cocktail-center">
         {cocktail.map((item) => {
-          return <h2 clssssName="section-title">Title</h2>;
+          return <Cocktail key={item.id} {...item} />;
         })}
       </div>
     </section>

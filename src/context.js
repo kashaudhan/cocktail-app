@@ -2,7 +2,7 @@ import React, { useState, useContext, useCallback, useEffect } from "react";
 const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 const AppContext = React.createContext();
 
-const AppProvider = ({ childern }) => {
+const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("d");
   const [cocktail, setCocktail] = useState([]);
@@ -40,7 +40,7 @@ const AppProvider = ({ childern }) => {
     <AppContext.Provider
       value={{ loading, cocktail, searchTerm, setSearchTerm }}
     >
-      {childern}
+      {children}
     </AppContext.Provider>
   );
 };

@@ -14,7 +14,7 @@
   --mainTransition:all 0.3s liner;
   --mainSpacing: 0.3rem;
   --lightShadow:2px 5px 3px 0px rgba(0, 0, 0, 0.5);
-  --darkShadow:4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow:5px 15px 12px 1px rgba(0, 0, 0, 0.5);
   --mainBorderRadius: 0.25rem;
   --smallWidth: 85vw;
   --maxWidth: 35rem;
@@ -106,17 +106,22 @@ section{
   font-weight: 400;
   padding: 0.25rem 0.5rem;
   transition: var(--mainTransition);
+  transition: all .2s ease-in-out;
 }
 
 .nav-links a:hover{
   color: var(--primaryColor);
-  font-weight: 600;
+  transform: scale(1.2);
 }
 
 .logo{
-  width: 70px;
-height: 70px;
-margin-left: 4rem;
+  width: 60px;
+  height: 60px;
+  margin-left: 4rem;
+  transition: all .2s ease-in-out;
+}
+.logo:hover{
+  transform: scale(1.2);
 }
 /* ------------------About-----------------
 ===========================================
@@ -141,83 +146,6 @@ margin-left: 4rem;
 .error-container{
   text-align: center;
   text-transform: capitalize;
-}
-
-/* ------------------Button-----------------
-===========================================
- */
-.btn, .btn-primary{
-  text-transform: uppercase;
-  letter-spacing: var(--mainSpacing);
-  color: var(--primaryColor);
-  border: 2px solid var(--primaryColor);
-  padding: 0.45rem 0.8rem;
-  display: inline-block;
-  transition: var(--mainTransition);
-  cursor: pointer;
-  font-size: 00.8rem;
-  background: transparent;
-  border-radius: var(--mainBorderRadius);
-  display: inline-block;
-}
-.btn:hover{
-  background-color: var(--primaryLightColor);
-  color: var(--mainBlack);
-}
-.btn-primary{
-  background: var(--primaryColor);
-  color: var(--mainWhite);
-  border-color: transparent;
-}
-img{
-  width: 80%;
-  display: block;
-}
-
-/* -----------Cocktail----------- 
-=================================
-*/
-
-.cocktail-section{
-  text-align: center;
-}
-.drink{
-  width:var(--smallWidth);
-  max-height: var(--fullWidth);
-  margin: 0 auto;
-  text-align: left;
-}
-.drink img{
-  border-radius: var(--mainBorderRadius);
-}
-.drink p{
-  font-weight: bold;
-  text-transform: capitalize;
-  line-height: 1.8;
-}
-.drink span{
-  margin-right: 0.5rem;
-}
-.drink-data{
-  background: var(--primaryLightColor);
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--mainBorderRadius);
-  color: var(--primaryColor);
-}
-.drink-info{
-  padding-top:1rem;
-}
-
-@media screen and (min-width: 992px){
-  .drink{
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    gap: 3rem;
-    align-items: center;
-  }
-  .drink-info{
-    padding-top: 0;
-  }
 }
 /*
 -----------------------Loader-----------------
@@ -276,8 +204,197 @@ img{
     height: 5em;
   }
 }
+
+/* ------------------Button-----------------
+===========================================
+ */
+.btn, .btn-primary{
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  color: var(--primaryColor);
+  border: 2px solid var(--primaryColor);
+  padding: 0.45rem 0.8rem;
+  display: inline-block;
+  transition: var(--mainTransition);
+  cursor: pointer;
+  font-size: 00.8rem;
+  background: transparent;
+  border-radius: var(--mainBorderRadius);
+  display: inline-block;
+}
+.btn:hover{
+  background-color: var(--primaryLightColor);
+  color: var(--mainBlack);
+}
+.btn-primary{
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  border-color: transparent;
+}
+img{
+  width: 80%;
+  display: block;
+}
+
+/* -----------Cocktail----------- 
+=================================
+*/
+
+.cocktail-section {
+  text-align: center;
+}
+.drink {
+  width: var(--smallWidth);
+  max-width: var(--fullWidth);
+  margin: 0 auto;
+  text-align: left;
+}
+.drink img {
+  border-radius: var(--mainBorderRadius);
+}
+.drink p {
+  font-weight: bold;
+  text-transform: capitalize;
+  line-height: 1.8;
+}
+.drink span {
+  margin-right: 0.5rem;
+}
+.drink-data {
+  background: var(--primaryLightColor);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--mainBorderRadius);
+  color: var(--primaryColor);
+}
+.drink-info {
+  padding-top: 2rem;
+}
+@media screen and (min-width: 992px) {
+  .drink {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .drink-info {
+    padding-top: 0;
+  }
+}
+/*
+
 /*
 ------------Search Form-----------------------
 ============================================== 
- */
+*/
+.search {
+  margin-top: 1rem;
+  padding-bottom: 0;
+}
 
+.search-form{
+  width: var(--smallWidth);
+  margin: 0 auto;
+  max-width: var(--maxWidth);
+  background: var(--mainWhite);
+  padding: 2rem 2.5rem;
+  text-transform: capitalize;
+  border-radius: var(--mainBorderRadius);
+  box-shadow: var(--lightShadow);
+  transition: all .2s ease-in-out;
+}
+
+.search-form:hover{
+  transform: scale(1.01);
+  box-shadow: var(--darkShadow);
+}
+
+.form-control label{
+  display: block;
+  margin-bottom: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 0.25rem;
+  color: var(--lightShadow);
+}
+
+.form-control input{
+  width: 100%;
+  border: none;
+  border-color: transparent;
+  border-radius: var(--mainBorderRadius);
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  
+}
+/*
+------------Cocktail List-----------------------
+============================================== 
+*/
+
+.section {
+  padding: 5rem 0;
+}
+.section-title {
+  font-size: 2rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+  margin-bottom: 3.5rem;
+  margin-top: 1rem;
+}
+.cocktail-center {
+  width: var(--smallWidth);
+  margin: 0 auto;
+  max-width: var(--fullWidth);
+  display: grid;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  /* align-items: start; */
+}
+@media screen and (min-width: 576px) {
+  .cocktail-center {
+    grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
+  }
+}
+
+
+/*
+------------Cocktail-----------------------
+============================================== 
+*/
+
+.cocktail {
+  background: var(--mainWhite);
+  margin-bottom: 2rem;
+  box-shadow: var(--lightShadow);
+  transition: var(--mainTransition);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: var(--mainBorderRadius);
+  transition: all .2s ease-in-out;
+}
+.cocktail:hover {
+  box-shadow: var(--darkShadow);
+  transform: scale(1.05);
+}
+.cocktail img {
+  height: 20rem;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: var(--mainBorderRadius);
+  border-top-right-radius: var(--mainBorderRadius);
+}
+.cocktail-footer {
+  padding: 1.5rem;
+}
+.cocktail-footer h3,
+.cocktail-footer h4,
+.cocktail-footer p {
+  margin-bottom: 0.3rem;
+}
+.cocktail-footer h3 {
+  font-size: 2rem;
+}
+.cocktail-footer p {
+  color: var(--darkGrey);
+  margin-bottom: 0.5rem;
+}

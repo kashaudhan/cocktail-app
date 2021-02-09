@@ -22,10 +22,11 @@ export default function SearchForm() {
       <form className="search-form" onSubmit={handleSubmit}>
         <div className="form-control">
           <label htmlFor="name">search your favourite cocktail</label>
-          <intput
+          <input
             type="text"
             name="name"
             id="name"
+            placeholder="e.g., chocolate"
             ref={searchValue}
             onChange={searchCocktail}
           />
