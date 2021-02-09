@@ -14,7 +14,7 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-    "predeployed":"npm rum build",
+    "predeploy":"npm rum build",
     "deploy" : "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
